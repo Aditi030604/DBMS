@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <form action="/register_donation" method="post">
+        <label for="donation_date">Donation Date:</label><br>
+        <input type="date" id="donation_date" name="donation_date" required><br><br>
+        <label for="volunteer_id">Volunteer ID:</label><br>
+        <input type="number" id="volunteer_id" name="volunteer_id" required><br><br>
+        <label for="payment_type">Payment Type:</label><br>
+        <input type="text" id="payment_type" name="payment_type" required><br><br>
+        <label for="amount">Amount:</label><br>
+        <input type="number" id="amount" name="amount" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="/donations">Back to Donations List</a>
+</body>
+</html>

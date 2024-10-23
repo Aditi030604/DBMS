@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <form action="/register_resource" method="post">
+        <label for="resource_name">Resource Name:</label><br>
+        <input type="text" id="resource_name" name="resource_name" required><br><br>
+        <label for="resource_description">Resource Description:</label><br>
+        <textarea id="resource_description" name="resource_description" required></textarea><br><br>
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="/resources">Back to Resources List</a>
+</body>
+</html>

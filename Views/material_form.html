@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <form action="/register_material" method="post">
+        <label for="material_title">Material Title:</label><br>
+        <input type="text" id="material_title" name="material_title" required><br><br>
+        <label for="resource_link">Resource Link:</label><br>
+        <input type="text" id="resource_link" name="resource_link" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="/materials">Back to Materials List</a>
+</body>
+</html>

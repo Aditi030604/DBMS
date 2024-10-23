@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skills List</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h1>Skills List</h1>
+    <table>
+        <tr>
+            <th>Skill Name</th>
+            <th>Skill Description</th>
+        </tr>
+        % for skill in skills:
+        <tr>
+            <td>{{skill[0]}}</td>
+            <td>{{skill[1]}}</td>
+        </tr>
+        % end
+    </table>
+    <a href="/register_skill">Register New Skill</a>
+    <br>
+    <a href="/">Home</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <form action="/register_session" method="post">
+        <label for="session_date">Session Date:</label><br>
+        <input type="date" id="session_date" name="session_date" required><br><br>
+        <label for="trainer_id">Trainer ID:</label><br>
+        <input type="number" id="trainer_id" name="trainer_id" required><br><br>
+        <label for="skill_id">Skill ID:</label><br>
+        <input type="number" id="skill_id" name="skill_id" required><br><br>
+        <label for="location">Location:</label><br>
+        <input type="text" id="location" name="location" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="/sessions">Back to Sessions List</a>
+</body>
+</html>

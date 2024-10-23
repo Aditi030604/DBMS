@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trainers List</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h1>Trainers List</h1>
+    <table>
+        <tr>
+            <th>Trainer Name</th>
+            <th>Skill Expertise</th>
+            <th>Contact Info</th>
+            <th>Organization ID</th>
+        </tr>
+        % for trainer in trainers:
+        <tr>
+            <td>{{trainer[0]}}</td>
+            <td>{{trainer[1]}}</td>
+            <td>{{trainer[2]}}</td>
+            <td>{{trainer[3]}}</td>
+        </tr>
+        % end
+    </table>
+    <a href="/register_trainer">Register New Trainer</a>
+    <br>
+    <a href="/">Home</a>
+</body>
+</html>

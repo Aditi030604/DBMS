@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Organization Name</th>
+            <th>POC Name</th>
+            <th>POC Email</th>
+            <th>POC Phone</th>
+            <th>Location</th>
+        </tr>
+        % for organization in organizations:
+        <tr>
+            <td>{{organization[0]}}</td>
+            <td>{{organization[1]}}</td>
+            <td>{{organization[2]}}</td>
+            <td>{{organization[3]}}</td>
+            <td>{{organization[4]}}</td>
+            <td>{{organization[5]}}</td>
+        </tr>
+        % end
+    </table>
+    <a href="/register_organization">Register New Organization</a>
+    <br>
+    <a href="/">Home</a>
+</body>
+</html>

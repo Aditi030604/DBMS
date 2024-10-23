@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Trainer</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h1>Register Trainer</h1>
+    <form action="/register_trainer" method="POST">
+        <label for="trainer_name">Trainer Name:</label><br>
+        <input type="text" id="trainer_name" name="trainer_name" required><br>
+        <label for="skill_expertise">Skill Expertise:</label><br>
+        <input type="text" id="skill_expertise" name="skill_expertise" required><br>
+        <label for="contact_info">Contact Info:</label><br>
+        <input type="text" id="contact_info" name="contact_info" required><br>
+        <label for="organization_id">Organization ID:</label><br>
+        <input type="text" id="organization_id" name="organization_id" required><br>
+        <input type="submit" value="Register Trainer">
+    </form>
+    <a href="/trainers">Back to Trainers List</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <table border="1">
+        <tr>
+            <th>Material Title</th>
+            <th>Resource Link</th>
+        </tr>
+        % for material in materials:
+        <tr>
+            <td>{{material[0]}}</td>
+            <td><a href="{{material[1]}}">{{material[1]}}</a></td>
+        </tr>
+        % end
+    </table>
+    <a href="/register_material">Register New Material</a>
+    <br>
+    <a href="/">Home</a>
+</body>
+</html>

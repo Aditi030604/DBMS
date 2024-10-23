@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <table border="1">
+        <tr>
+            <th>Resource Name</th>
+            <th>Resource Description</th>
+            <th>Quantity</th>
+        </tr>
+        % for resource in resources:
+        <tr>
+            <td>{{resource[0]}}</td>
+            <td>{{resource[1]}}</td>
+            <td>{{resource[2]}}</td>
+        </tr>
+        % end
+    </table>
+    <a href="/register_resource">Register New Resource</a>
+    <br>
+    <a href="/">Home</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Skill</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h1>Register Skill</h1>
+    <form action="/register_skill" method="POST">
+        <label for="skill_name">Skill Name:</label><br>
+        <input type="text" id="skill_name" name="skill_name" required><br>
+        <label for="skill_description">Skill Description:</label><br>
+        <textarea id="skill_description" name="skill_description" required></textarea><br>
+        <input type="submit" value="Register Skill">
+    </form>
+    <a href="/skills">Back to Skills List</a>
+</body>
+</html>

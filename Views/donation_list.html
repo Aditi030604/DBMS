@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <table border="1">
+        <tr>
+            <th>Donation Date</th>
+            <th>Volunteer ID</th>
+            <th>Payment Type</th>
+            <th>Amount</th>
+        </tr>
+        % for donation in donations:
+        <tr>
+            <td>{{donation[0]}}</td>
+            <td>{{donation[1]}}</td>
+            <td>{{donation[2]}}</td>
+            <td>{{donation[3]}}</td>
+        </tr>
+        % end
+    </table>
+    <a href="/register_donation">Register New Donation</a>
+    <br>
+    <a href="/">Home</a>
+</body>
+</html>

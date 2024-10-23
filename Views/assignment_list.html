@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignments List</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h1>Assignments List</h1>
+    <table>
+        <tr>
+            <th>Assignment Date</th>
+            <th>Volunteer ID</th>
+            <th>Organization ID</th>
+            <th>Status</th>
+        </tr>
+        % for assignment in assignments:
+        <tr>
+            <td>{{assignment[0]}}</td>
+            <td>{{assignment[1]}}</td>
+            <td>{{assignment[2]}}</td>
+            <td>{{assignment[3]}}</td>
+        </tr>
+        % end
+    </table>
+    <a href="/register_assignment">Register New Assignment</a>
+    <br>
+    <a href="/">Home</a>
+</body>
+</html>

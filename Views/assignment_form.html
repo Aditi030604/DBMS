@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Assignment</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h1>Register Assignment</h1>
+    <form action="/register_assignment" method="POST">
+        <label for="assignment_date">Assignment Date:</label><br>
+        <input type="date" id="assignment_date" name="assignment_date" required><br>
+        <label for="volunteer_id">Volunteer ID:</label><br>
+        <input type="text" id="volunteer_id" name="volunteer_id" required><br>
+        <label for="organization_id">Organization ID:</label><br>
+        <input type="text" id="organization_id" name="organization_id" required><br>
+        <label for="status">Status:</label><br>
+        <input type="text" id="status" name="status" required><br>
+        <input type="submit" value="Register Assignment">
+    </form>
+    <a href="/assignments">Back to Assignments List</a>
+    <a href="/">Home</a>
+</body>
+</html>

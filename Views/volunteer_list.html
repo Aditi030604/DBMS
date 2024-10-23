@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Status</th>
+        </tr>
+        % for volunteer in volunteers:
+        <tr>
+            <td>{{volunteer[0]}}</td>
+            <td>{{volunteer[1]}}</td>
+            <td>{{volunteer[2]}}</td>
+            <td>{{volunteer[3]}}</td>
+            <td>{{volunteer[4]}}</td>
+        </tr>
+        % end
+    </table>
+    <a href="/register_volunteer">Register New Volunteer</a>
+    <br>
+    <a href="/">Home</a>
+</body>
+</html>

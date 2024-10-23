@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h2>{{title}}</h2>
+    <table border="1">
+        <tr>
+            <th>Session Date</th>
+            <th>Trainer ID</th>
+            <th>Skill ID</th>
+            <th>Location</th>
+        </tr>
+        % for session in sessions:
+        <tr>
+            <td>{{session[0]}}</td>
+            <td>{{session[1]}}</td>
+            <td>{{session[2]}}</td>
+            <td>{{session[3]}}</td>
+        </tr>
+        % end
+    </table>
+    <a href="/register_session">Register New Session</a>
+    <br>
+    <a href="/">Home</a>
+</body>
+</html>
