@@ -3,16 +3,14 @@ import mysql.connector
 
 app = Bottle()
 
-# MySQL connection
 def connect_db():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="aditi0306",  # Update with your MySQL password
+        password="aditi0306", 
         database="management"
     )
 
-### ROUTES FOR VOLUNTEERS ###
 @app.route('/volunteers')
 def list_volunteers():
     db = connect_db()
@@ -30,8 +28,6 @@ def register_volunteer():
         email = request.forms.get('email')
         phone = request.forms.get('phone')
         status = request.forms.get('status')
-
-        # Insert into database
         db = connect_db()
         cursor = db.cursor()
         cursor.execute("INSERT INTO Volunteers (VName, VEmail, VPhoneNo, VStatus) VALUES (%s, %s, %s, %s)", 
@@ -43,7 +39,6 @@ def register_volunteer():
     else:
         return template('volunteer_form', title='Register Volunteer')
 
-### ROUTES FOR ORGANIZATIONS ###
 @app.route('/organizations')
 def list_organizations():
     db = connect_db()
@@ -62,8 +57,6 @@ def register_organization():
         poc_email = request.forms.get('email')
         poc_phone = request.forms.get('phone')
         location = request.forms.get('location')
-
-        # Insert into database
         db = connect_db()
         cursor = db.cursor()
         cursor.execute("INSERT INTO Organizations (OrganizationName, POCName, POCEmail, POCPhoneNo, Location) VALUES (%s, %s, %s, %s, %s)", 
@@ -75,7 +68,6 @@ def register_organization():
     else:
         return template('organization_form', title='Register Organization')
 
-### ROUTES FOR SKILLS ###
 @app.route('/skills')
 def list_skills():
     db = connect_db()
@@ -91,8 +83,6 @@ def register_skill():
     if request.method == 'POST':
         skill_name = request.forms.get('skill_name')
         skill_description = request.forms.get('skill_description')
-
-        # Insert into database
         db = connect_db()
         cursor = db.cursor()
         cursor.execute("INSERT INTO Skills (SkillName, SkillDescription) VALUES (%s, %s)", 
@@ -104,7 +94,6 @@ def register_skill():
     else:
         return template('skill_form', title='Register Skill')
 
-### ROUTES FOR RESOURCES ###
 @app.route('/resources')
 def list_resources():
     db = connect_db()
@@ -121,8 +110,6 @@ def register_resource():
         resource_name = request.forms.get('resource_name')
         resource_description = request.forms.get('resource_description')
         quantity = request.forms.get('quantity')
-
-        # Insert into database
         db = connect_db()
         cursor = db.cursor()
         cursor.execute("INSERT INTO Resources (ResourceName, ResourceDescription, Quantity) VALUES (%s, %s, %s)", 
@@ -134,7 +121,6 @@ def register_resource():
     else:
         return template('resource_form', title='Register Resource')
 
-### ROUTES FOR ASSIGNMENTS ###
 @app.route('/assignments')
 def list_assignments():
     db = connect_db()
@@ -152,8 +138,6 @@ def register_assignment():
         volunteer_id = request.forms.get('volunteer_id')
         organization_id = request.forms.get('organization_id')
         status = request.forms.get('status')
-
-        # Insert into database
         db = connect_db()
         cursor = db.cursor()
         cursor.execute("INSERT INTO VolunteerAssignments (AssignmentDate, VolunteerId, OrganizationId, Status) VALUES (%s, %s, %s, %s)", 
@@ -165,7 +149,6 @@ def register_assignment():
     else:
         return template('assignment_form', title='Register Assignment')
 
-### ROUTES FOR DONATIONS ###
 @app.route('/donations')
 def list_donations():
     db = connect_db()
@@ -183,8 +166,6 @@ def register_donation():
         volunteer_id = request.forms.get('volunteer_id')
         payment_type = request.forms.get('payment_type')
         amount = request.forms.get('amount')
-
-        # Insert into database
         db = connect_db()
         cursor = db.cursor()
         cursor.execute("INSERT INTO Donations (DonationDate, VolunteerId, PaymentType, Amount) VALUES (%s, %s, %s, %s)", 
@@ -196,7 +177,6 @@ def register_donation():
     else:
         return template('donation_form', title='Register Donation')
 
-### ROUTES FOR TRAINERS ###
 @app.route('/trainers')
 def list_trainers():
     db = connect_db()
@@ -214,8 +194,6 @@ def register_trainer():
         skill_expertise = request.forms.get('skill_expertise')
         contact_info = request.forms.get('contact_info')
         organization_id = request.forms.get('organization_id')
-
-        # Insert into database
         db = connect_db()
         cursor = db.cursor()
         cursor.execute("INSERT INTO Trainers (TrainerName, SkillExpertise, ContactInfo, OrganizationId) VALUES (%s, %s, %s, %s)", 
@@ -227,7 +205,6 @@ def register_trainer():
     else:
         return template('trainer_form', title='Register Trainer')
 
-### ROUTES FOR SESSIONS ###
 @app.route('/sessions')
 def list_sessions():
     db = connect_db()
@@ -246,8 +223,6 @@ def register_session():
         skill_id = request.forms.get('skill_id')
         session_date = request.forms.get('session_date')
         duration = request.forms.get('duration')
-
-        # Insert into database
         db = connect_db()
         cursor = db.cursor()
         cursor.execute("INSERT INTO TrainingSessions (MaterialTitle, TrainerId, SkillId, Date, Duration) VALUES (%s, %s, %s, %s, %s)", 
@@ -259,7 +234,6 @@ def register_session():
     else:
         return template('session_form', title='Register Session')
 
-### ROUTES FOR MATERIALS ###
 @app.route('/materials')
 def list_materials():
     db = connect_db()
@@ -275,8 +249,6 @@ def register_material():
     if request.method == 'POST':
         material_title = request.forms.get('material_title')
         resource_link = request.forms.get('resource_link')
-
-        # Insert into database
         db = connect_db()
         cursor = db.cursor()
         cursor.execute("INSERT INTO TrainingMaterials (MaterialTitle, ResourceLink) VALUES (%s, %s)", 
@@ -292,6 +264,5 @@ def register_material():
 def index():
     return template('index', title="Disaster Management System")
 
-# Run the app
 if __name__ == "__main__":
     app.run(host='localhost', port=8080, debug=True)
